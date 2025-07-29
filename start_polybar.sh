@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Terminate already running bar instances
-killall -q polybar
-
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# Check if polybar is already running
+if pgrep -x polybar > /dev/null; then
+    echo "Polybar is already running"
+    exit 1
+fi
 
 # Launch polybar
 if type "xrandr"; then
@@ -15,4 +15,4 @@ else
   polybar --reload toph &
 fi
 
-echo "Polybar launched..."
+echo "Polybar started..."
