@@ -3,6 +3,8 @@
 A clean and modern polybar configuration.
 
 ![Screenshot](./cg-polybar.png)
+![Screenshot](./cg-polybar-2nd.png)
+
 
 ## Features
 
