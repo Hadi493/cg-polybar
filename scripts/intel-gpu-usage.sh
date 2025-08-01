@@ -1,5 +1,19 @@
 #!/bin/bash
 
-usage=$(cat /sys/class/drm/card0/gt_busy_percent 2>/dev/null || echo "0")
-freq=$(cat /sys/class/drm/card0/gt_cur_freq_mhz 2>/dev/null || echo "N/A")
+# Run intel_gpu_top and capture output
+gpu_json=$(timeout 0.5s sudo intel_gpu_top -J -s 100 -o - 2>/dev/null)
+
+# Extract actual frequency
+freq=$(echo "$gpu_json" | grep -m1 '"actual":' | awk -F ': ' '{print $2}' | tr -d ',')
+
+# Extract Render/3D usage %
+usage=$(echo "$gpu_json" | grep '"Render/3D"' -A1 | grep '"busy":' | awk -F ': ' '{print $2}' | tr -d ',')
+
+# Fallbacks
+freq=${freq:-"N/A"}
+usage=${usage:-"?"}
+
+# Final output
 echo "${usage}% @ ${freq}MHz"
+
+
