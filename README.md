@@ -8,7 +8,7 @@ A clean and modern polybar configuration.
 ## Features
 
 - **Workspace indicator:** Shows the current workspace and allows you to switch between them.
-- **Window title:** Displays the title of the currently active window.
+- **Window title:** Displays the title of the current active window.
 - **Microphone status:** Shows the current microphone volume and mute status.
 - **Audio control:** Shows the current volume level and allows you to mute/unmute.
 - **System monitoring:** Displays CPU and RAM usage.
@@ -45,7 +45,7 @@ A clean and modern polybar configuration.
     
 3.  **Set Script Permissions**
     
-    The launch and microphone scripts require execute permissions to run.
+    The launch and microphone scripts require executory permissions to run.
     
     ```bash
     chmod +x ~/.config/polybar/launch_polybar.sh
