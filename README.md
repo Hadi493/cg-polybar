@@ -29,7 +29,7 @@ A clean and modern polybar configuration.
     Open your terminal and clone the repository to your local machine:
     
     ```bash
-    git clone https://github.com/your-username/cg-polybar.git
+    git clone https://github.com/Hadi493/cg-polybar.git
     cd cg-polybar
     ```
     
