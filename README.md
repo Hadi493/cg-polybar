@@ -2,7 +2,7 @@
 
 A clean and modern polybar configuration.
 
-![Screenshot](./i3.png)
+![Screenshot](./i3.personal.test.png)
 
 
 
